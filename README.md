@@ -53,7 +53,6 @@ into chosen telescope directory.
    * Set dir_enc to the directory path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
-
 An example of the configuration header is below.
 ```
 # Configuration Settings
@@ -71,13 +70,11 @@ motion -c /home/pi/telescope/configuration/motion_640x480.conf
 ```
 
 5. Change permissions of telescope directory to local user (where [user] is your local user).
-
 ```
 sudo chown -R [user]:[user] /home/[user]/telescope/
 ```
 
 6. Make telescope_server.py, start_motion.bash, start_telescope_server.bash executable.
-
 ```
 chmod +x telescope_server.py
 chmod +x start_motion.bash
@@ -85,13 +82,10 @@ chmod +x start_telescope_server.bash
 ```
 
 7. As local user, add to crontab using
-
 ```
 crontab -e
 ```
-
 the following:
-
 ```
 @reboot [path to start_telescope_server.bash]
 @reboot [path to start_motion.bash]
@@ -101,9 +95,9 @@ This automatically starts the telescope server and motion when the Raspberry Pi 
 
 Notes
 
-    * The GPG public key should reside in .gpg in the home directory of the user. 
-    * Future versions of telescope should allow you to configure a custom gpg directory.
-    * Also note that the dropbox-uploader.sh script is only required for use on a Raspberry Pi as there is no native 
+   * The GPG public key should reside in .gpg in the home directory of the user. 
+   * Future versions of telescope should allow you to configure a custom gpg directory.
+   * Also note that the dropbox-uploader.sh script is only required for use on a Raspberry Pi as there is no native 
 Dropbox client. On x86 or x86-64 computers, you can use the native client and set the dir_enc setting to a folder in the Dropbox.
 
 
@@ -120,9 +114,7 @@ into chosen telescope directory.
    * Set dir_dec to the path of decrypted photos
    * Set dir_enc to the path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
-
 An example of the configuration header is below
-
 ```
 # Configuration Settings
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
@@ -147,7 +139,6 @@ chmod +x start_telescope_client.bash
 ```
 crontab -e
 ```
-
 the following:
 ```
 @reboot [path to start_telescope_client.bash]
