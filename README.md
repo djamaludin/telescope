@@ -33,15 +33,15 @@ Software
 You can either use your OS package manager such as apt-get or aptitude to
 install these packages.
 
-'''
+```
 sudo apt-get install python3 gnupg motion inotify-tools curl
-'''
+```
 
 To get Dropbox-Uploader you can visit the repository or use wget.
 
-'''
+```
 wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
-'''
+```
 
 
 ## Server Installation and Setup ##
@@ -55,26 +55,26 @@ into chosen telescope directory.
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
 
 An example of the configuration header is below.
-'''
+```
 # Configuration Settings
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
 encryption_key = "012345678" # GPG Public Key Fingerpring
 dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
-'''
+```
 
 3. Run dropbox_uploader.sh and follow instructions to configure access to Dropbox.
 
 4. Edit start_motion.bash to add the location of the motion configuration file. An example of this is below.
-'''
+```
 motion -c /home/pi/telescope/configuration/motion_640x480.conf
-'''
+```
 
 5. Change permissions of telescope directory to local user (where [user] is your local user).
 
-'''
+```
 sudo chown -R [user]:[user] /home/[user]/telescope/
-'''
+```
 
 6. Make telescope_server.py, start_motion.bash, start_telescope_server.bash executable.
 
@@ -92,10 +92,10 @@ crontab -e
 
 the following:
 
-'''
+```
 @reboot [path to start_telescope_server.bash]
 @reboot [path to start_motion.bash]
-'''
+```
 
 This automatically starts the telescope server and motion when the Raspberry Pi is booted.
 
@@ -117,37 +117,43 @@ client.
 into chosen telescope directory.
 
 2. Edit telescope_client.py file with configuration settings
-    * Set dir_dec to the path of decrypted photos
-    * Set dir_enc to the path of encrypted photos
-    * Set encryption_key to the GPG public key fingerprint
+   * Set dir_dec to the path of decrypted photos
+   * Set dir_enc to the path of encrypted photos
+   * Set encryption_key to the GPG public key fingerprint
 
-    An example of the configuration header is below:
+An example of the configuration header is below
 
-    $ # Configuration Settings
-    $ dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
-    $ dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
-    $ encryption_key = "012345678" # GPG Public Key Fingerpring
+```
+# Configuration Settings
+dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
+dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
+encryption_key = "012345678" # GPG Public Key Fingerpring
+```
 
 3. Change permissions of telescope directory to the local user (where [user] is your local user).
-
-    $ sudo chown -R [user]:[user] /home/[user]/telescope/
+```
+sudo chown -R [user]:[user] /home/[user]/telescope/
+```
 
 4. Make telescope_client.py, start_telescope_client.bash executable
-
-    $ chmod +x telescope_client.py
-    $ chmod +x start_telescope_client.bash
+```
+chmod +x telescope_client.py
+chmod +x start_telescope_client.bash
+```
 
 5. Run telescope_client.py to decrypt files from Dropbox. Or if you used a GPG Private Key without a password, you can do the next step to provide auto decryption of photos.
 
 6. (Optional) As local user, add to crontab using:
+```
+crontab -e
+```
 
-    $ crontab -e
+the following:
+```
+@reboot [path to start_telescope_client.bash]
+```
 
-    the following:
-
-    $ @reboot [path to start_telescope_client.bash]
-
-    This automatically starts the telescope client when the client is booted and allows for auto decryption of photos.
+This automatically starts the telescope client when the client is booted and allows for auto decryption of photos.
 
 ## Future Work ##
 1. Allow custom GPG directories to be configured.
