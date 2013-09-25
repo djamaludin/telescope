@@ -78,17 +78,17 @@ sudo chown -R [user]:[user] /home/[user]/telescope/
 
 6. Make telescope_server.py, start_motion.bash, start_telescope_server.bash executable.
 
-'''
+```
 chmod +x telescope_server.py
 chmod +x start_motion.bash
 chmod +x start_telescope_server.bash
-'''
+```
 
 7. As local user, add to crontab using
 
-'''
+```
 crontab -e
-'''
+```
 
 the following:
 
