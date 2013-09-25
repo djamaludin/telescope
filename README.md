@@ -14,21 +14,21 @@ embedded computer or computer capable or running Linux. The proof-of-concept
 system utilised the following hardware and software:
 
 Hardware
-    * [Raspberry Pi Model B (512MB)](http://www.raspberrypi.org/)
-    * [Power Adapter](http://elinux.org/RPi_VerifiedPeripherals#Power_adapters)
-    * [SD Card](http://elinux.org/RPi_SD_cards)
-    * [Compatible Webcam](http://elinux.org/RPi_USB_Webcams)
-    * [Powered USB Hub (optional)](http://elinux.org/RPi_Powered_USB_Hubs)
-    * [USB WIFI Adaptor (optional)](http://elinux.org/RPi_USB_Wi-Fi_Adapters)
+   * [Raspberry Pi Model B (512MB)](http://www.raspberrypi.org/)
+   * [Power Adapter](http://elinux.org/RPi_VerifiedPeripherals#Power_adapters)
+   * [SD Card](http://elinux.org/RPi_SD_cards)
+   * [Compatible Webcam](http://elinux.org/RPi_USB_Webcams)
+   * [Powered USB Hub (optional)](http://elinux.org/RPi_Powered_USB_Hubs)
+   * [USB WIFI Adaptor (optional)](http://elinux.org/RPi_USB_Wi-Fi_Adapters)
 
 Software
-    * [Rasbian](http://www.raspberrypi.org/downloads/)
-    * [Python](http://python.org) 3.2
-    * [GnuPG](http://www.gnupg.org/)
-    * [Motion](http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome)
-    * [inotify-tools](https://github.com/rvoicilas/inotify-tools)
-    * [cURL](http://curl.haxx.se/)
-    * [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
+   * [Rasbian](http://www.raspberrypi.org/downloads/)
+   * [Python](http://python.org) 3.2
+   * [GnuPG](http://www.gnupg.org/)
+   * [Motion](http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome)
+   * [inotify-tools](https://github.com/rvoicilas/inotify-tools)
+   * [cURL](http://curl.haxx.se/)
+   * [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
 
 You can either use your OS package manager such as apt-get or aptitude to
 install these packages.
@@ -45,12 +45,12 @@ To get Dropbox-Uploader you can visit the repository or use wget.
 into chosen telescope directory.
 
 2. Edit telescope_server.py file with configuration settings
-    * Set dir_dec to the directory path of decrypted photos (motion output directory)
-    * Set dir_enc to the directory path of encrypted photos
-    * Set encryption_key to the GPG public key fingerprint
-    * Set the dropbox_upload to the path to dropbox_uploader.sh script
+   * Set dir_dec to the directory path of decrypted photos (motion output directory)
+   * Set dir_enc to the directory path of encrypted photos
+   * Set encryption_key to the GPG public key fingerprint
+   * Set the dropbox_upload to the path to dropbox_uploader.sh script
 
-    An example of the configuration header is below:
+   An example of the configuration header is below.
     $ # Configuration Settings
     $ dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
     $ dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
@@ -74,7 +74,7 @@ into chosen telescope directory.
     $ chmod +x start_motion.bash
     $ chmod +x start_telescope_server.bash
 
-7. As local user, add to crontab using:
+7. As local user, add to crontab using
 
     $ crontab -e
 
@@ -85,7 +85,7 @@ into chosen telescope directory.
 
     This automatically starts the telescope server and motion when the Raspberry Pi is booted.
 
-Notes:
+Notes
 
     * The GPG public key should reside in .gpg in the home directory of the user. 
     * Future versions of telescope should allow you to configure a custom gpg directory.
