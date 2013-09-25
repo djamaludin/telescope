@@ -35,5 +35,11 @@ install these packages.
 
     $ sudo apt-get install python3 gnupg motion inotify-tools curl
 
+To get Dropbox-Uploader you can visit the repository or use wget.
+
+    $ wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
+
 
 ## Server Installation and Setup ##
+1. Download telescope_server.py, start_motion.bash, start_telescope_server.bash
+into chosen telescope directory.
