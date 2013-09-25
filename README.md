@@ -48,14 +48,13 @@ wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_upload
 1. Download telescope_server.py, start_motion.bash, start_telescope_server.bash
 into chosen telescope directory.
 
-2. Edit telescope_server.py file with configuration settings
+2. Edit telescope_server.py file with configuration settings. An example of the configuration header is below.
    * Set dir_dec to the directory path of decrypted photos (motion output directory)
    * Set dir_enc to the directory path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
-An example of the configuration header is below.
+
 ```
-# Configuration Settings
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
 encryption_key = "012345678" # GPG Public Key Fingerpring
@@ -110,13 +109,12 @@ client.
 1. Download telescope_client.py, start_telescope_client.bash 
 into chosen telescope directory.
 
-2. Edit telescope_client.py file with configuration settings
+2. Edit telescope_client.py file with configuration settings. An example of the configuration header is below.
    * Set dir_dec to the path of decrypted photos
    * Set dir_enc to the path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
-An example of the configuration header is below
+
 ```
-# Configuration Settings
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
 encryption_key = "012345678" # GPG Public Key Fingerpring
