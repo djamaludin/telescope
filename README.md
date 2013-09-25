@@ -33,11 +33,15 @@ Software
 You can either use your OS package manager such as apt-get or aptitude to
 install these packages.
 
-    $ sudo apt-get install python3 gnupg motion inotify-tools curl
+'''
+sudo apt-get install python3 gnupg motion inotify-tools curl
+'''
 
 To get Dropbox-Uploader you can visit the repository or use wget.
 
-    $ wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
+'''
+wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
+'''
 
 
 ## Server Installation and Setup ##
@@ -50,40 +54,50 @@ into chosen telescope directory.
    * Set encryption_key to the GPG public key fingerprint
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
 
-   An example of the configuration header is below.
-    $ # Configuration Settings
-    $ dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
-    $ dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
-    $ encryption_key = "012345678" # GPG Public Key Fingerpring
-    $ dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
+An example of the configuration header is below.
+'''
+# Configuration Settings
+dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
+dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
+encryption_key = "012345678" # GPG Public Key Fingerpring
+dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
+'''
 
 3. Run dropbox_uploader.sh and follow instructions to configure access to Dropbox.
 
-4. Edit start_motion.bash to add the location of the motion configuration file
-
-    An example of this is:
-    $ motion -c /home/pi/telescope/configuration/motion_640x480.conf
+4. Edit start_motion.bash to add the location of the motion configuration file. An example of this is below.
+'''
+motion -c /home/pi/telescope/configuration/motion_640x480.conf
+'''
 
 5. Change permissions of telescope directory to local user (where [user] is your local user).
 
-    $ sudo chown -R [user]:[user] /home/[user]/telescope/
+'''
+sudo chown -R [user]:[user] /home/[user]/telescope/
+'''
 
-6. Make telescope_server.py, start_motion.bash, start_telescope_server.bash executable
+6. Make telescope_server.py, start_motion.bash, start_telescope_server.bash executable.
 
-    $ chmod +x telescope_server.py
-    $ chmod +x start_motion.bash
-    $ chmod +x start_telescope_server.bash
+'''
+chmod +x telescope_server.py
+chmod +x start_motion.bash
+chmod +x start_telescope_server.bash
+'''
 
 7. As local user, add to crontab using
 
-    $ crontab -e
+'''
+crontab -e
+'''
 
-    the following:
+the following:
 
-    $ @reboot [path to start_telescope_server.bash]
-    $ @reboot [path to start_motion.bash]
+'''
+@reboot [path to start_telescope_server.bash]
+@reboot [path to start_motion.bash]
+'''
 
-    This automatically starts the telescope server and motion when the Raspberry Pi is booted.
+This automatically starts the telescope server and motion when the Raspberry Pi is booted.
 
 Notes
 
