@@ -7,11 +7,14 @@ surveillance. The resulting photos are encrypted using a user generated
 public key (GnuPG backend) and uploaded to a cloud service provider such 
 as Dropbox. Encryption of data at rest and data in motion is implemented.
 
+> **WARNING** telescope is still being developed and should not be
+> considered stable or production ready. Pull or deploy at your own risk.
+
 ## Requirements and Dependancies ##
 
 telescope was designed for use on a Raspberry Pi, however it can run on any
 embedded computer or computer capable or running Linux. The proof-of-concept
-system utilised the following hardware and software:
+system utilised the following hardware and software.
 
 Hardware
    * [Raspberry Pi Model B (512MB)](http://www.raspberrypi.org/)
