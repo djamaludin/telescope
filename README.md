@@ -56,12 +56,12 @@ into chosen telescope directory.
    * Set dir_enc to the directory path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
-```
-dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
-dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
-encryption_key = "012345678" # GPG Public Key Fingerpring
-dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
-```
+   ```
+   dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
+   dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
+   encryption_key = "012345678" # GPG Public Key Fingerpring
+   dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
+   ```
 
 3. Run dropbox_uploader.sh and follow instructions to configure access to Dropbox.
 
