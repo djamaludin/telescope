@@ -56,7 +56,6 @@ into chosen telescope directory.
    * Set dir_enc to the directory path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
    * Set the dropbox_upload to the path to dropbox_uploader.sh script
-
 ```
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
@@ -116,7 +115,6 @@ into chosen telescope directory.
    * Set dir_dec to the path of decrypted photos
    * Set dir_enc to the path of encrypted photos
    * Set encryption_key to the GPG public key fingerprint
-
 ```
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
@@ -148,7 +146,7 @@ the following:
 This automatically starts the telescope client when the client is booted and allows for auto decryption of photos.
 
 ## Future Work ##
-1. Allow custom GPG directories to be configured.
+1. Allow custom GnuPG directories to be configured.
 2. Allow different cloud backup services or servers to be configured.
 3. Provide an easier installation mechanism.
 
