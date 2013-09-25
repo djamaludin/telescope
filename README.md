@@ -148,9 +148,10 @@ the following:
 This automatically starts the telescope client when the client is booted and allows for auto decryption of photos.
 
 ## Future Work ##
-1. Allow custom GnuPG directories to be configured.
-2. Allow different cloud backup services or servers to be configured.
-3. Provide an easier installation mechanism.
+1. Support use of the Raspberry Pi Foundation Camera Module.
+2. Allow custom GnuPG directories to be configured.
+3. Allow different cloud backup services or servers to be configured.
+4. Provide an easier installation mechanism.
 
 
 ## License ##
