@@ -7,8 +7,9 @@ surveillance. The resulting photos are encrypted using a user generated
 public key (GnuPG backend) and uploaded to a cloud service provider such 
 as Dropbox. Encryption of data at rest and data in motion is implemented.
 
-> **WARNING** telescope is still being developed and should not be
-> considered stable or production ready. Pull or deploy at your own risk.
+> **WARNING** 
+> telescope is still being developed and should not be considered stable or 
+> production ready. Pull or deploy at your own risk.
 
 ## Requirements and Dependancies ##
 
