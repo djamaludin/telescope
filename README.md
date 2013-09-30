@@ -1,5 +1,5 @@
 Telescope
-#########
+=========
 
 Telescope is a proof-of-concept secure end-to-end encryption surveillance
 camera utility. It runs on a Raspberry Pi, but can be used on any device 
