@@ -25,7 +25,7 @@ import os
 # Configuration Settings
 dir_dec = "/path/to/directory/of/decrypted/photos/" # Directory of decrypted photos
 dir_enc = "/path/to/Dropbox/directory/" # Dropbox directory of encrypted photos
-encryption_key = "[Key Fingerprint]" # GPG Public Key Fingerpring
+encryption_key = "[Key Fingerprint]" # GPG Public Key Fingerprint
 
 # Get file lists for photos and photos_encrypted directories
 file_list = os.listdir(dir_dec)

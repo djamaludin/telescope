@@ -25,7 +25,7 @@ import os
 # Configuration Settings
 dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
 dir_enc = "/home/pi/telescope/photos_encrypted/" # Directory of encrypted photos
-encryption_key = "[Key Fingerprint]" # GPG Public Key Fingerpring
+encryption_key = "[Key Fingerprint]" # GPG Public Key Fingerprint
 dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
 
 # Get file lists for photos and photos_encrypted directories

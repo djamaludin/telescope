@@ -1,6 +1,7 @@
-# telescope #
+Telescope
+#########
 
-telescope is a proof-of-concept secure end-to-end encryption surveillance
+Telescope is a proof-of-concept secure end-to-end encryption surveillance
 camera utility. It runs on a Raspberry Pi, but can be used on any device 
 that runs Linux. It relies on Motion to capture movement events and 
 surveillance. The resulting photos are encrypted using a user generated 
@@ -8,12 +9,12 @@ public key (GnuPG backend) and uploaded to a cloud service provider such
 as Dropbox. Encryption of data at rest and data in motion is implemented.
 
 > **WARNING** 
-> telescope is still being developed and should not be considered stable or 
+> Telescope is still being developed and should not be considered stable or 
 > production ready. Pull or deploy at your own risk.
 
-## Requirements and Dependancies ##
-
-telescope was designed for use on a Raspberry Pi, however it can run on any
+Requirements and Dependencies
+-----------------------------
+Telescope was designed for use on a Raspberry Pi, however it can run on any
 embedded computer or computer capable or running Linux. The proof-of-concept
 system utilised the following hardware and software.
 
@@ -48,9 +49,10 @@ wget https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_upload
 ```
 
 
-## Server Installation and Setup ##
+Server Installation and Setup
+-----------------------------
 1. Download telescope_server.py, start_motion.bash, start_telescope_server.bash
-into chosen telescope directory.
+into chosen Telescope directory.
 
 2. Edit telescope_server.py file with configuration settings. An example of the configuration header is below.
    * Set dir_dec to the directory path of decrypted photos (motion output directory)
@@ -61,7 +63,7 @@ into chosen telescope directory.
     ```
     dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
     dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
-    encryption_key = "012345678" # GPG Public Key Fingerpring
+    encryption_key = "012345678" # GPG Public Key Fingerprint
     dropbox_upload = "/home/pi/telescope/dropbox_uploader.sh" # Path to dropbox_uploader.sh
     ```
 
@@ -72,7 +74,7 @@ into chosen telescope directory.
 motion -c /home/pi/telescope/configuration/motion_640x480.conf
 ```
 
-5. Change permissions of telescope directory to local user (where [user] is your local user).
+5. Change permissions of Telescope directory to local user (where [user] is your local user).
 ```
 sudo chown -R [user]:[user] /home/[user]/telescope/
 ```
@@ -94,24 +96,25 @@ the following:
 @reboot [path to start_motion.bash]
 ```
 
-This automatically starts the telescope server and motion when the Raspberry Pi is booted.
+This automatically starts the Telescope server and motion when the Raspberry Pi is booted.
 
 Notes
 
    * The GPG public key should reside in .gpg in the home directory of the user. 
-   * Future versions of telescope should allow you to configure a custom gpg directory.
+   * Future versions of Telescope should allow you to configure a custom gpg directory.
    * Also note that the dropbox-uploader.sh script is only required for use on a Raspberry Pi as there is no native 
 Dropbox client. On x86 or x86-64 computers, you can use the native client and set the dir_enc setting to a folder in the Dropbox.
 
 
 
-## Client Installation and Setup ##
+Client Installation and Setup
+-----------------------------
 The client can be any device capable of pulling files from Dropbox.
 The proof-of-concept system was a Linux laptop running a native Dropbox 
 client.
 
 1. Download telescope_client.py, start_telescope_client.bash 
-into chosen telescope directory.
+into chosen Telescope directory.
 
 2. Edit telescope_client.py file with configuration settings. An example of the configuration header is below.
    * Set dir_dec to the path of decrypted photos
@@ -121,10 +124,10 @@ into chosen telescope directory.
     ```
     dir_dec = "/home/pi/telescope/photos/" # Directory of decrypted photos
     dir_enc = "/home/pi/telescope/photos_enc/" # Directory of encrypted photos
-    encryption_key = "012345678" # GPG Public Key Fingerpring
+    encryption_key = "012345678" # GPG Public Key Fingerprint
     ```
 
-3. Change permissions of telescope directory to the local user (where [user] is your local user).
+3. Change permissions of Telescope directory to the local user (where [user] is your local user).
 ```
 sudo chown -R [user]:[user] /home/[user]/telescope/
 ```
@@ -146,16 +149,22 @@ the following:
 @reboot [path to start_telescope_client.bash]
 ```
 
-This automatically starts the telescope client when the client is booted and allows for auto decryption of photos.
+This automatically starts the Telescope client when the client is booted and allows for auto decryption of photos.
 
-## Future Work ##
+Future Work
+-----------
 1. Support use of the Raspberry Pi Foundation Camera Module.
 2. Allow custom GnuPG directories to be configured.
 3. Allow different cloud backup services or servers to be configured.
 4. Provide an easier installation mechanism.
 
 
-## License ##
+License
+-------
+Copyright 2012-2013 C.I.Djamaludin
+
+Licensed under the GPLv3.
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -168,4 +177,5 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
