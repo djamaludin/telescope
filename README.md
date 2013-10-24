@@ -155,9 +155,10 @@ Future Work
 -----------
 1. Support use of the Raspberry Pi Foundation Camera Module.
 2. Allow custom GnuPG directories to be configured.
-3. Allow different cloud backup services or servers to be configured.
-4. Provide an easier installation mechanism.
-5. Heartbeat mechanism.
+3. Automatic generation of GPG keys.
+4. Allow different cloud backup services or servers to be configured.
+5. Provide an easier installation mechanism.
+6. Heartbeat mechanism.
 
 
 License
