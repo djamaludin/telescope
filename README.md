@@ -154,8 +154,8 @@ This automatically starts the Telescope client when the client is booted and all
 Future Work
 -----------
 1. Support use of the Raspberry Pi Foundation Camera Module.
-2. Allow custom GnuPG directories to be configured.
-3. Automatic generation of GPG keys (Future work 2 is not needed if there is automatic key generation and management).
+2. Allow custom GnuPG directories to be configured (Not needed if there is automatic key generation and management).
+3. Automatic generation of GPG keys.
 4. Allow different cloud backup services or servers to be configured.
 5. Provide an easier installation mechanism.
 6. Heartbeat mechanism.
